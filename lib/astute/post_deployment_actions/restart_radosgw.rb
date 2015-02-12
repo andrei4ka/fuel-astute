@@ -29,7 +29,7 @@ module Astute
       cmd.tr!("\n"," ")
 
       controller_nodes = deployment_info.first['nodes'].inject([]) do |c_n, n|
-        c_n << n['uid'] if ['controller', 'primary-controller'].include? n['role']
+        c_n << n['uid'] if ['ceph-mon', 'primary-ceph-mon'].include? n['role']
         c_n
       end
 
